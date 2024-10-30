@@ -7,9 +7,10 @@ This project implements a Chain of Thought (CoT) decoding method ([Paper](https:
 
 - Load various transformer models and tokenizers from Hugging Face Hub.
 - Calculate CoT scores to assess the quality of generated answers.
-- Supports both sequential and parallel decoding.
+- Supports both sequential and parallel decoding (slightly less VRAM usage for sequential mode at the cost of being much slower).
 - Optimized for both CPU and GPU (CUDA and MPS) environments.
 - Configurable model selection, question input, and decoding parameters.
+- Compatible with Llama, Phi models (Gemma2 is not working at the moment).
 
 ## Installation
 
@@ -49,6 +50,7 @@ python main.py --model_name "meta-llama/Llama-3.2-1B-Instruct" --question "Sally
 - `--aggregation`: Method for aggregating CoT scores (`max` or `sum`, default: `max`).
 - `--device`: Device to run the model on (`cuda`, `cpu`, or `mps`, default: `cuda`).
 - `--use_sequential`: Use sequential processing for low RAM situations (optional).
+- `--system_prompt`: Use a custom system prompt. If not given, defaults to the chat template included in the tokenizer (optional).
 
 ## Contributing
 
