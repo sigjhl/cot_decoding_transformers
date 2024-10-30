@@ -1,0 +1,7 @@
+torch==2.5.0
+transformers==4.45.2
+psutil==6.1.0
+regex==2024.9.11
+requests==2.32.3
+typing-extensions==4.12.2
+argparse==1.4.0
